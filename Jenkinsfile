@@ -31,7 +31,7 @@ environment {
             steps {
                 script {
                     echo '📤 Pushing Docker images to DockerHub...'
-                    withCredentials([usernamePassword(credentialsId: "${DOCKERHUB_CREDENTIALS}", usernameVariable: 'USER', passwordVariable: 'PASS')]) {
+                    withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_CREDENTIALS', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                         sh """
                             echo "$PASS" | docker login -u "$USER" --password-stdin
                             docker push ${DOCKERHUB_REPO}/frontend:latest
