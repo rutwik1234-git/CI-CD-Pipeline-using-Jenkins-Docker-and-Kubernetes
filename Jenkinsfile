@@ -20,8 +20,8 @@ environment {
                 script {
                     echo '🐳 Building Docker images...'
                     sh """
-                        docker build -t ${DOCKERHUB_REPO}/frontend:latest ./frontend
-                        docker build -t ${DOCKERHUB_REPO}/backend:latest ./backend
+                        docker build -t rutwik02/frontend:latest ./frontend
+                        docker build -t rutwik02/backend:latest ./backend
                     """
                 }
             }
@@ -34,8 +34,8 @@ environment {
                     withCredentials([usernamePassword(credentialsId: 'DOCKERHUB_CREDENTIALS', usernameVariable: 'USER', passwordVariable: 'PASS')]) {
                         sh """
                             echo "$PASS" | docker login -u "$USER" --password-stdin
-                            docker push ${DOCKERHUB_REPO}/frontend:latest
-                            docker push ${DOCKERHUB_REPO}/backend:latest
+                            docker push rutwik02/frontend:latest
+                            docker push rutwik02/backend:latest
                             docker logout
                         """
                     }
