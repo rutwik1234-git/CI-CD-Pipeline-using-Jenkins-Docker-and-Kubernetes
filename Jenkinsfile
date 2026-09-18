@@ -11,7 +11,7 @@ environment {
             steps {
                 echo '📦 Cloning repository...'
                 git branch: 'main',
-                url: 'https://github.com/Sumit19D/CI-CD-Pipeline-using-Jenkins-Docker-and-Kubernetes.git'
+                url: 'https://github.com/rutwik1234-git/CI-CD-Pipeline-using-Jenkins-Docker-and-Kubernetes.git'
             }
         }
 
